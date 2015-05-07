@@ -1,2 +1,2 @@
 # TastyBite
-TastyBite Hotel Meni List
+TastyBite Hotel Menu List
