@@ -1,5 +1,6 @@
 package com.example.mushirahmed.tastybite.slidingtabactivity;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,11 +16,9 @@ public class TastyBite extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
         setContentView(R.layout.tasty_bite);
-
-
-
-
         new Handler().postDelayed(new Runnable() {
 
             // Using handler with postDelayed called runnable run method

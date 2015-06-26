@@ -21,5 +21,7 @@
         A basic sample which shows how to use SlidingTabLayout to display a custom
             ViewPager title strip which gives continuous feedback to the user when scrolling.]]>
     </string>
+    <string name="searvew_hnt">Search Item...</string>
+    <string name="menu_search">menu search</string>
 
 </resources>

@@ -23,7 +23,7 @@ import static com.example.mushirahmed.tastybite.slidingtabactivity.SlidingTabBas
  */
 public class CustomListAdapter extends BaseAdapter
 {
-    private int[] colors = new int[]{0xAAf6ffc8, 0xAA538d00};
+
     private LayoutInflater mInflater;
 
     //The variable that will hold our text data to be tied to list
@@ -65,7 +65,9 @@ public class CustomListAdapter extends BaseAdapter
             viewHolder = new ViewHolder();
             viewHolder.txtItemNm = (TextView)convertView.findViewById(R.id.txt_cst_itm_nm);
             viewHolder.txtItemPrc = (TextView)convertView.findViewById(R.id.txt_cst_itm_prc);
+
             convertView.setTag(viewHolder);
+
         }
         else
         {
@@ -89,8 +91,6 @@ public class CustomListAdapter extends BaseAdapter
         }
 
         return convertView;
-
-
 
 
     }

@@ -1,0 +1,99 @@
+TASK com.example.mushirahmed.tastybite id=13
+  ACTIVITY com.example.mushirahmed.tastybite/.slidingtabactivity.MainActivity b52556e8 pid=4337
+    Local FragmentActivity b4f6b2f0 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    Active Fragments in b4f4ae20:
+      #0: SlidingTabBasicFragment{b577a6b8 #0 id=0x7f080050}
+        mFragmentId=#7f080050 mContainerId=#7f080050 mTag=null
+        mState=5 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
+        mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{b4f4ae20 in MainActivity{b4f6b2f0}}
+        mActivity=com.example.mushirahmed.tastybite.slidingtabactivity.MainActivity@b4f6b2f0
+        mContainer=android.widget.FrameLayout{b5778790 V.E..... ........ 0,0-480,690 #7f080050 app:id/sample_content_fragment}
+        mView=android.widget.LinearLayout{b5782270 V.E..... ........ 0,0-480,690}
+        mInnerView=android.widget.LinearLayout{b5782270 V.E..... ........ 0,0-480,690}
+        Child FragmentManager{b577b148 in SlidingTabBasicFragment{b577a6b8}}:
+          FragmentManager misc state:
+            mActivity=com.example.mushirahmed.tastybite.slidingtabactivity.MainActivity@b4f6b2f0
+            mContainer=android.support.v4.app.Fragment$1@b577b470
+            mParent=SlidingTabBasicFragment{b577a6b8 #0 id=0x7f080050}
+            mCurState=5 mStateSaved=false mDestroyed=false
+    Added Fragments:
+      #0: SlidingTabBasicFragment{b577a6b8 #0 id=0x7f080050}
+    FragmentManager misc state:
+      mActivity=com.example.mushirahmed.tastybite.slidingtabactivity.MainActivity@b4f6b2f0
+      mContainer=android.support.v4.app.FragmentActivity$2@b4f5e158
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{b4f40880 V.E..... ... 0,0-480,800}
+        android.widget.LinearLayout{b4f40ad0 V.E..... ... 0,0-480,800}
+          com.android.internal.widget.ActionBarContainer{b4f40cf0 V.ED.... ... 0,38-480,110 #1020359 android:id/action_bar_container}
+            com.android.internal.widget.ActionBarView{b4f6d9f0 V.E..... ... 0,0-480,72 #102035a android:id/action_bar}
+              android.widget.LinearLayout{b4f420e8 V....... ... 73,0-198,72}
+                android.widget.ImageView{b4f42dc0 G.ED.... ... 0,0-0,0 #1020246 android:id/up}
+                android.widget.LinearLayout{b5775ad0 V.E..... ... 0,17-113,54}
+                  android.widget.TextView{b5775de0 V.ED.... ... 0,0-113,37 #102024d android:id/action_bar_title}
+                  android.widget.TextView{b5776b08 G.ED.... ... 0,0-0,0 #102024e android:id/action_bar_subtitle}
+              com.android.internal.widget.ActionBarView$HomeView{b4f71cc8 V.....C. ... 13,0-73,72}
+                android.widget.ImageView{b4f4dbc8 G.ED.... ... 0,0-0,0 #1020246 android:id/up}
+                android.widget.ImageView{b4f4df48 V.ED.... ... 6,12-54,60 #102002c android:id/home}
+              com.android.internal.view.menu.ActionMenuView{b5860980 V.ED.... ... 480,0-480,72}
+            com.android.internal.widget.ActionBarContextView{b5777150 G.E..... ... 0,0-0,0 #102035b android:id/action_context_bar}
+          android.widget.FrameLayout{b57776b8 V.E..... ... 0,110-480,800 #1020002 android:id/content}
+            android.widget.LinearLayout{b57783b0 V.E..... ... 0,0-480,690 #7f08004f app:id/sample_main_layout}
+              android.widget.FrameLayout{b5778790 V.E..... ... 0,0-480,690 #7f080050 app:id/sample_content_fragment}
+                android.widget.LinearLayout{b5782270 V.E..... ... 0,0-480,690}
+                  com.example.mushirahmed.tastybite.common.view.SlidingTabLayout{b5782a70 VFED.... ... 0,0-480,73 #7f080051 app:id/sliding_tabs}
+                    com.example.mushirahmed.tastybite.common.view.SlidingTabStrip{b582ccf0 V.ED.... ... 0,0-3080,73}
+                      android.widget.TextView{b58396b0 V.ED..C. ... 0,0-116,73}
+                      android.widget.TextView{b583a598 V.ED..C. ... 116,0-244,73}
+                      android.widget.TextView{b583b418 V.ED..C. ... 244,0-359,73}
+                      android.widget.TextView{b583c298 V.ED..C. ... 359,0-520,73}
+                      android.widget.TextView{b583d120 V.ED..C. ... 520,0-666,73}
+                      android.widget.TextView{b583dfa0 V.ED..C. ... 666,0-768,73}
+                      android.widget.TextView{b583ee20 V.ED..C. ... 768,0-954,73}
+                      android.widget.TextView{b583fcb0 V.ED..C. ... 954,0-1094,73}
+                      android.widget.TextView{b5840b38 V.ED..C. ... 1094,0-1309,73}
+                      android.widget.TextView{b58419c8 V.ED..C. ... 1309,0-1537,73}
+                      android.widget.TextView{b5842860 V.ED..C. ... 1537,0-1719,73}
+                      android.widget.TextView{b58436f0 V.ED..C. ... 1719,0-1904,73}
+                      android.widget.TextView{b5844580 V.ED..C. ... 1904,0-2043,73}
+                      android.widget.TextView{b5845478 V.ED..C. ... 2043,0-2219,73}
+                      android.widget.TextView{b5846308 V.ED..C. ... 2219,0-2349,73}
+                      android.widget.TextView{b5847190 V.ED..C. ... 2349,0-2568,73}
+                      android.widget.TextView{b5848020 V.ED..C. ... 2568,0-2741,73}
+                      android.widget.TextView{b5848ea8 V.ED..C. ... 2741,0-2867,73}
+                      android.widget.TextView{b5849d28 V.ED..C. ... 2867,0-3080,73}
+                  android.support.v4.view.ViewPager{b582edb0 VFED.... ... 0,73-480,690 #7f080052 app:id/viewpager}
+                    android.widget.LinearLayout{b584eda0 V.E..... ... 0,0-480,617}
+                      android.widget.ListView{b584f618 VFED.VC. F.. 0,0-480,617 #7f080055 app:id/lstmenu}
+                        android.widget.LinearLayout{b5856fb0 V.E..... ... 0,0-480,58}
+                          android.widget.TextView{b5857388 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b58578f0 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+                        android.widget.LinearLayout{b58587a8 V.E..... ... 0,60-480,118}
+                          android.widget.TextView{b5858b00 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b5858fc8 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+                        android.widget.LinearLayout{b5859880 V.E..... ... 0,120-480,178}
+                          android.widget.TextView{b5859bd8 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b585a0a0 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+                        android.widget.LinearLayout{b585a958 V.E..... ... 0,180-480,238}
+                          android.widget.TextView{b585acb0 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b585b178 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+                        android.widget.LinearLayout{b585ba30 V.E..... ... 0,240-480,298}
+                          android.widget.TextView{b585bd88 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b585c250 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+                    android.widget.LinearLayout{b5854a98 V.E..... ... 480,0-960,617}
+                      android.widget.ListView{b5854e20 VFED.VC. ... 0,0-480,617 #7f080055 app:id/lstmenu}
+                        android.widget.LinearLayout{b585cb08 V.E..... ... 0,0-480,58}
+                          android.widget.TextView{b585ce60 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b585d328 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+                        android.widget.LinearLayout{b585dbe0 V.E..... ... 0,60-480,118}
+                          android.widget.TextView{b585df38 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b585e400 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+                        android.widget.LinearLayout{b585ecb8 V.E..... ... 0,120-480,178}
+                          android.widget.TextView{b585f010 V.ED.... ... 0,0-480,29 #7f080053 app:id/txt_cst_itm_nm}
+                          android.widget.TextView{b585f4d8 V.ED.... ... 0,29-480,58 #7f080054 app:id/txt_cst_itm_prc}
+          com.android.internal.widget.ActionBarContainer{b5777ac0 G.ED.... ... 0,0-0,0 #102035c android:id/split_action_bar}
