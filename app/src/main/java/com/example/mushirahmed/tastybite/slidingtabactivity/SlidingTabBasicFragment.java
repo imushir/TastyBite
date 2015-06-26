@@ -1,66 +1,64 @@
 package com.example.mushirahmed.tastybite.slidingtabactivity;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.example.mushirahmed.tastybite.R;
 import com.example.mushirahmed.tastybite.common.view.SlidingTabLayout;
 
 import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by mushirahmed on 2/5/15.
  */
-public class SlidingTabBasicFragment extends Fragment {
-
-    ArrayList<String> snacks = new ArrayList<String>();
-    ArrayList<String> nuggets = new ArrayList<String>();
-    ArrayList<String> burger = new ArrayList<String>();
-    ArrayList<String> sandwiches = new ArrayList<String>();
-    ArrayList<String> shawarma = new ArrayList<String>();
-    ArrayList<String> rolls = new ArrayList<String>();
-    ArrayList<String> pizza_non_veg = new ArrayList<String>();
-    ArrayList<String> pizza_veg = new ArrayList<String>();
-    ArrayList<String> cocntinental_food = new ArrayList<String>();
-    ArrayList<String> appetizer_non_veg = new ArrayList<String>();
-    ArrayList<String> appetizer_veg = new ArrayList<String>();
-    ArrayList<String> soup_non_veg = new ArrayList<String>();
-    ArrayList<String> soup_veg = new ArrayList<String>();
-    ArrayList<String> rice_non_veg = new ArrayList<String>();
-    ArrayList<String> rice_veg = new ArrayList<String>();
-    ArrayList<String> noodels_non_veg = new ArrayList<String>();
-    ArrayList<String> noodels_veg = new ArrayList<String>();
-    ArrayList<String> sizzlers = new ArrayList<String>();
-    ArrayList<String> tbsp = new ArrayList<String>();
-
-
-
+public class SlidingTabBasicFragment extends Fragment
+{
 
     static final String LOG_TAG = "SlidingTabsBasicFragment";
-
-    /**
-     * A custom {@link ViewPager} title strip which looks much like Tabs present in Android v4.0 and
-     * above, but is designed to give continuous feedback to the user when scrolling.
-     */
     private SlidingTabLayout mSlidingTabLayout;
-
-    /**
-     * A {@link ViewPager} which will be used in conjunction with the {@link SlidingTabLayout} above.
-     */
     private ViewPager mViewPager;
 
-    /**
-     * Inflates the {@link View} which will be displayed by this {@link Fragment}, from the app's
-     * resources.
-     */
+
+
+
+    List<String> snacks = new ArrayList<String>();
+    List<String> nuggets = new ArrayList<String>();
+    List<String> burger = new ArrayList<String>();
+    List<String> sandwiches = new ArrayList<String>();
+    List<String> shawarma = new ArrayList<String>();
+    List<String> rolls = new ArrayList<String>();
+    List<String> pizza_non_veg = new ArrayList<String>();
+    List<String> pizza_veg = new ArrayList<String>();
+    List<String> cocntinental_food = new ArrayList<String>();
+    List<String> appetizer_non_veg = new ArrayList<String>();
+    List<String> appetizer_veg = new ArrayList<String>();
+    List<String> soup_non_veg = new ArrayList<String>();
+    List<String> soup_veg = new ArrayList<String>();
+    List<String> rice_non_veg = new ArrayList<String>();
+    List<String> rice_veg = new ArrayList<String>();
+    List<String> noodels_non_veg = new ArrayList<String>();
+    List<String> noodels_veg = new ArrayList<String>();
+    List<String> sizzlers = new ArrayList<String>();
+    List<String> tbsp = new ArrayList<String>();
+
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
+    {
+
         snacks.add("Fries         : 60S 70L");
         snacks.add("Mexican Fries : 65S 75L");
         snacks.add("Garlic Fries  : 70S 80L");
@@ -260,26 +258,48 @@ public class SlidingTabBasicFragment extends Fragment {
         sizzlers.add("Continental Sizzler     : 230");
         tbsp.add("Tasty Bite Special Sizzler : 260");
 
+        setHasOptionsMenu(true); // TO Show the Searview in ActionBar when Fragment is extended
 
 
 
         return inflater.inflate(R.layout.fragment_sample, container, false);
     }
-
-    // BEGIN_INCLUDE (fragment_onviewcreated)
-    /**
-     * This is called after the {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)} has finished.
-     * Here we can pick out the {@link View}s we need to configure from the content view.
-     *
-     * We set the {@link ViewPager}'s adapter to be an instance of {@link SamplePagerAdapter}. The
-     * {@link SlidingTabLayout} is then given the {@link ViewPager} so that it can populate itself.
-     *
-     * @param view View created in {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}
-     */
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        getActivity().getMenuInflater().inflate(R.menu.activity_main_actions, menu);
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.action_search:
+                Toast.makeText(getActivity().getApplicationContext(),"You have click on Search", Toast.LENGTH_LONG).show();
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+
+    }
+
+    static class ViewHolder
+    {
+        TextView txtItemNm,txtItemPrc;
+    }
+
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState)
+    {
         // BEGIN_INCLUDE (setup_viewpager)
         // Get the ViewPager and set it's PagerAdapter so that it can display items
+
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mViewPager.setAdapter(new SamplePagerAdapter());
         // END_INCLUDE (setup_viewpager)
@@ -289,11 +309,14 @@ public class SlidingTabBasicFragment extends Fragment {
         // it's PagerAdapter set.
         mSlidingTabLayout = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
         mSlidingTabLayout.setViewPager(mViewPager);
+
         // END_INCLUDE (setup_slidingtablayout)
     }
 
 
-    class SamplePagerAdapter extends PagerAdapter {
+    class SamplePagerAdapter extends PagerAdapter
+    {
+
 
 
         @Override
@@ -357,123 +380,173 @@ public class SlidingTabBasicFragment extends Fragment {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             // Inflate a new layout from our resources
-            ArrayAdapter<String> adapter;
-
+            //ArrayAdapter<String> adapter;
+            final CustomListAdapter adapter;
 
             View view = getActivity().getLayoutInflater().inflate(R.layout.pager_item,
                     container, false);
             // Add the newly created View to the ViewPager
             container.addView(view);
 
-
-            ListView lstvwMenu = (ListView) view.findViewById(R.id.lstmenu);
-
+            final ListView lstvwMenu = (ListView) view.findViewById(R.id.lstmenu);
 
             if(position == 0)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,snacks);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,snacks);
+                adapter = new CustomListAdapter(getActivity().getApplication(),snacks);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 1)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,nuggets);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,nuggets);
+                adapter = new CustomListAdapter(getActivity().getApplication(),nuggets);
                 lstvwMenu.setAdapter(adapter);
+
 
             }
             else if (position == 2)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,burger);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,burger);
+                adapter = new CustomListAdapter(getActivity().getApplication(),burger);
                 lstvwMenu.setAdapter(adapter);
 
             }
             else if (position == 3)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,sandwiches);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,sandwiches);
+                adapter = new CustomListAdapter(getActivity().getApplication(),sandwiches);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 4)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,shawarma);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,shawarma);
+                adapter = new CustomListAdapter(getActivity().getApplication(),shawarma);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
 
             else if (position == 5)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,rolls);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,rolls);
+                adapter = new CustomListAdapter(getActivity().getApplication(),rolls);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 6)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,pizza_non_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,pizza_non_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),pizza_non_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 7)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,pizza_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,pizza_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),pizza_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 8)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,cocntinental_food);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,cocntinental_food);
+                adapter = new CustomListAdapter(getActivity().getApplication(),cocntinental_food);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 9)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,appetizer_non_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,appetizer_non_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),appetizer_non_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 10)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,appetizer_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,appetizer_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),appetizer_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 11)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,soup_non_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,soup_non_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),soup_non_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 12)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,soup_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,soup_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),soup_veg);
                 lstvwMenu.setAdapter(adapter);
+
             }
             else if (position == 13)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,rice_non_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,rice_non_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),rice_non_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 14)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,rice_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,rice_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),rice_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 15)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,noodels_non_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,noodels_non_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),noodels_non_veg);
                 lstvwMenu.setAdapter(adapter);
+
             }
             else if (position == 16)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,noodels_veg);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,noodels_veg);
+                adapter = new CustomListAdapter(getActivity().getApplication(),noodels_veg);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 17)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,sizzlers);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,sizzlers);
+                adapter = new CustomListAdapter(getActivity().getApplication(),sizzlers);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
             else if (position == 18)
             {
-                adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,tbsp);
+                //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,tbsp);
+                adapter = new CustomListAdapter(getActivity().getApplication(),tbsp);
                 lstvwMenu.setAdapter(adapter);
+
+
             }
+
 
             // Return the View
             return view;
 
 
         }
-
 
 
         @Override
