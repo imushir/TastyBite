@@ -11,8 +11,9 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:textStyle="bold"
+        android:textSize="15sp"
         android:paddingLeft="10px"
-        android:textColor="#fff65c02"
+        android:textColor="#ff4e667f"
         android:id="@+id/txt_cst_itm_nm"
         />
 
@@ -20,7 +21,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:textStyle="bold"
+        android:textSize="12sp"
         android:paddingLeft="10px"
-        android:textColor="#FF000000"
+        android:textColor="#fb565656"
         android:id="@+id/txt_cst_itm_prc" />
 </LinearLayout>
