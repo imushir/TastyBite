@@ -33,15 +33,17 @@ public class SlidingTabBasicFragment extends Fragment
     private SlidingTabLayout mSlidingTabLayout;
     private ViewPager mViewPager;
 
+
+
     List<String> snacks = new ArrayList<String>();
     List<String> nuggets = new ArrayList<String>();
     List<String> burger = new ArrayList<String>();
-    List<String> sandwiches = new ArrayList<String>();
+    List<String> sandwitches = new ArrayList<String>();
     List<String> shawarma = new ArrayList<String>();
     List<String> rolls = new ArrayList<String>();
     List<String> pizza_non_veg = new ArrayList<String>();
     List<String> pizza_veg = new ArrayList<String>();
-    List<String> cocntinental_food = new ArrayList<String>();
+    List<String> continental_food = new ArrayList<String>();
     List<String> appetizer_non_veg = new ArrayList<String>();
     List<String> appetizer_veg = new ArrayList<String>();
     List<String> soup_non_veg = new ArrayList<String>();
@@ -75,13 +77,13 @@ public class SlidingTabBasicFragment extends Fragment
         burger.add("Mix Veg Burger       : 55");
         tbsp.add("Tasty Byte Special Burger :90");
 
-        sandwiches.add("Veg Sandwich              : 35");
-        sandwiches.add("Veg Toast Sandwich        : 45");
-        sandwiches.add("Veg Cheese Toast Sandwich : 60");
-        sandwiches.add(" Chicken Junglee Sandwich : 70");
-        sandwiches.add(" Chicken Tikka Sandwich   : 70");
-        sandwiches.add(" Cheese Sandwich          : 65");
-        sandwiches.add(" Club Sandwich            : 85");
+        sandwitches.add("Veg Sandwich              : 35");
+        sandwitches.add("Veg Toast Sandwich        : 45");
+        sandwitches.add("Veg Cheese Toast Sandwich : 60");
+        sandwitches.add(" Chicken Junglee Sandwich : 70");
+        sandwitches.add(" Chicken Tikka Sandwich   : 70");
+        sandwitches.add(" Cheese Sandwich          : 65");
+        sandwitches.add(" Club Sandwich            : 85");
         tbsp.add(" Tasty Byte Special Sandwich : 80");
 
         shawarma.add("Khabus            : 45");
@@ -115,10 +117,10 @@ public class SlidingTabBasicFragment extends Fragment
         pizza_veg.add("Mediterranean Pizza: 140M 190L");
         tbsp.add("Tasty Byte Special Veg Pizza :150M 210L");
 
-        cocntinental_food.add("Popcorn Chicken      : 120");
-        cocntinental_food.add(" Lolly Pop(6Pcs)     : 120 ");
-        cocntinental_food.add("Spider Chicken(6Pcs) : 140");
-        cocntinental_food.add("Chicken Tikka Stick(3Stick) : 140");
+        continental_food.add("Popcorn Chicken      : 120");
+        continental_food.add(" Lolly Pop(6Pcs)     : 120 ");
+        continental_food.add("Spider Chicken(6Pcs) : 140");
+        continental_food.add("Chicken Tikka Stick(3Stick) : 140");
 
 
         appetizer_non_veg.add("Chicken cripsy          : 160");
@@ -264,36 +266,7 @@ public class SlidingTabBasicFragment extends Fragment
 
         return inflater.inflate(R.layout.fragment_sample, container, false);
     }
-   /* @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
-    {
-        super.onCreateOptionsMenu(menu, inflater);
-        getActivity().getMenuInflater().inflate(R.menu.activity_main_actions, menu);
-        String pkg = "com.example.mushirahmed.tastybite";
-        String cls = "com.example.mushirahmed.tastybite.slidingtabactivity.MainActivity";
-        ComponentName mycomponent = new ComponentName(pkg,cls);
-        SearchManager searchManager =(SearchManager)getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(mycomponent));
-        searchView.setSubmitButtonEnabled(true);
-        return true;
 
-
-    }*/
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
-            case R.id.action_search:
-                Toast.makeText(getActivity().getApplicationContext(),"You have click on Search", Toast.LENGTH_LONG).show();
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-
-
-    }*/
 
     static class ViewHolder
     {
@@ -323,7 +296,8 @@ public class SlidingTabBasicFragment extends Fragment
 
     class SamplePagerAdapter extends PagerAdapter
     {
-
+        public String[] PAGETITLE_NAME = {"SNACKS","NUGGETS","BURGER","SANDWITCHES","SHAWARMA","ROLLS","PIZZA_NON_VEG","PIZZA_VEG","CONTINENTAL_FOOD"
+                ,"APPETIZER_NON_VEG","APPETIZER_VEG","SOUP_NON_VEG","SOUP_VEG","RICE_NON_VEG","RICE_VEG","NOODELS_NON_VEG","NOODLES_VEG","SIZZLERS","TBSP"};
 
 
         @Override
@@ -341,44 +315,12 @@ public class SlidingTabBasicFragment extends Fragment
 
         @Override
         public CharSequence getPageTitle(int position) {
-            if (position == 0)
-                return "SNACKS";
-            else if (position == 1)
-                return "NUGGETS";
-            else if (position == 2)
-                return "BURGER";
-            else if (position == 3)
-                return "SANDWICHES";
-            else if (position == 4)
-                return "SHAWARMA";
-            else if (position == 5)
-                return "ROLLS";
-            else if (position == 6)
-                return "PIZZA(NON-VEG)";
-            else if (position == 7)
-                return "PIZZA(VEG)";
-            else if (position == 8)
-                return "CONTINENTAL FOOD";
-            else if (position == 9)
-                return "APPETIZER(NON-VEG)";
-            else if (position == 10)
-                return "APPETIZER(VEG)";
-            else if (position == 11)
-                return "SOUP(NON-VEG)";
-            else if (position == 12)
-                return "SOUP(VEG)";
-            else if (position == 13)
-                return "RICE(NON-VEG)";
-            else if (position == 14)
-                return "RICE(VEG)";
-            else if (position == 15)
-                return "NOODLES(NON-VEG)";
-            else if (position == 16)
-                return "NOODLES(VEG)";
-            else if (position == 17)
-                return "SIZZLERS";
-            else if (position == 18)
-                return "Tasty Bite Special";
+
+            for(int i =0;i < getCount();i++)
+            {
+                if(position == i)
+                    return PAGETITLE_NAME[i];
+            }
             return null;
         }
 
@@ -423,7 +365,7 @@ public class SlidingTabBasicFragment extends Fragment
             else if (position == 3)
             {
                 //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,sandwiches);
-                adapter = new CustomListAdapter(getActivity().getApplication(),sandwiches);
+                adapter = new CustomListAdapter(getActivity().getApplication(),sandwitches);
                 lstvwMenu.setAdapter(adapter);
 
 
@@ -464,7 +406,7 @@ public class SlidingTabBasicFragment extends Fragment
             else if (position == 8)
             {
                 //adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,cocntinental_food);
-                adapter = new CustomListAdapter(getActivity().getApplication(),cocntinental_food);
+                adapter = new CustomListAdapter(getActivity().getApplication(),continental_food);
                 lstvwMenu.setAdapter(adapter);
 
 
