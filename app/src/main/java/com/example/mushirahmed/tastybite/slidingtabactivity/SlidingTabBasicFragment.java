@@ -1,4 +1,7 @@
 package com.example.mushirahmed.tastybite.slidingtabactivity;
+import android.app.SearchManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
@@ -29,9 +32,6 @@ public class SlidingTabBasicFragment extends Fragment
     static final String LOG_TAG = "SlidingTabsBasicFragment";
     private SlidingTabLayout mSlidingTabLayout;
     private ViewPager mViewPager;
-
-
-
 
     List<String> snacks = new ArrayList<String>();
     List<String> nuggets = new ArrayList<String>();
@@ -86,7 +86,7 @@ public class SlidingTabBasicFragment extends Fragment
 
         shawarma.add("Khabus            : 45");
         shawarma.add("Bread Roll        : 35");
-        shawarma.add("Cheese Kkhabus    : 75");
+        shawarma.add("Cheese Khabus    : 75");
         shawarma.add("Chesse Beard Roll : 65");
         shawarma.add("Arabian Bhel      : 65");
 
@@ -264,17 +264,24 @@ public class SlidingTabBasicFragment extends Fragment
 
         return inflater.inflate(R.layout.fragment_sample, container, false);
     }
-    @Override
+   /* @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
         getActivity().getMenuInflater().inflate(R.menu.activity_main_actions, menu);
+        String pkg = "com.example.mushirahmed.tastybite";
+        String cls = "com.example.mushirahmed.tastybite.slidingtabactivity.MainActivity";
+        ComponentName mycomponent = new ComponentName(pkg,cls);
+        SearchManager searchManager =(SearchManager)getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(mycomponent));
+        searchView.setSubmitButtonEnabled(true);
+        return true;
 
 
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
         {
@@ -286,7 +293,7 @@ public class SlidingTabBasicFragment extends Fragment
         }
 
 
-    }
+    }*/
 
     static class ViewHolder
     {
